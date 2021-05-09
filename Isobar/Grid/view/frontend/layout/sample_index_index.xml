@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Isobar_Grid::css/custom.css" />
+    </head>
+    <body>
+    <referenceContainer name="content">
+        <block class="Isobar\Grid\Block\StaffList" name="isobar_grid" template="list.phtml">
+        <arguments>
+            <argument name="view_model" xsi:type="object">Isobar\Grid\ViewModel\StaffListViewModel</argument>
+        </arguments>
+        </block>
+    </referenceContainer>
+</body>
+</page>

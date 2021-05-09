@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route method="GET" url="/V1/isobar_grid/listAll">
+        <service class="Isobar\Grid\Api\HamburgerManagementInterface" method="listAllUser"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/isobar_grid/listUser/:id">
+        <service class="Isobar\Grid\Api\HamburgerManagementInterface" method="listUser"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="POST" url="/V1/isobar_grid/createUser">
+        <service class="Isobar\Grid\Api\HamburgerManagementInterface" method="createUser"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="PUT" url="/V1/isobar_grid/updateUser">
+        <service class="Isobar\Grid\Api\HamburgerManagementInterface" method="updateUser"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="DELETE" url="/V1/isobar_grid/deleteUser/:id">
+        <service class="Isobar\Grid\Api\HamburgerManagementInterface" method="deleteUser"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

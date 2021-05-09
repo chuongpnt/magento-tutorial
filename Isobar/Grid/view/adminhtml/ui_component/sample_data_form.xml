@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">sample_data_form.sample_data_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Staff Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="back" class="Isobar\Grid\Block\Adminhtml\Data\Edit\Buttons\Back" />
+            <button name="delete" class="Isobar\Grid\Block\Adminhtml\Data\Edit\Buttons\Delete" />
+            <button name="reset" class="Isobar\Grid\Block\Adminhtml\Data\Edit\Buttons\Reset" />
+            <button name="save" class="Isobar\Grid\Block\Adminhtml\Data\Edit\Buttons\Save" />
+            <button name="save_and_continue" class="Isobar\Grid\Block\Adminhtml\Data\Edit\Buttons\SaveAndContinue" />
+        </buttons>
+        <namespace>sample_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>sample_data_form.sample_data_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="sample_data_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="sample/data/save"/>
+        </settings>
+        <dataProvider class="Isobar\Grid\Model\HamburgerProvider" name="sample_data_form_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <fieldset name="data_details">
+        <settings>
+            <label/>
+        </settings>
+        <field name="id" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">data</item>
+                </item>
+            </argument>
+            <settings>
+                <dataType>text</dataType>
+                <visible>false</visible>
+                <dataScope>id</dataScope>
+            </settings>
+        </field>
+
+        <field name="staff" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">data</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Staff</label>
+                <dataScope>staff</dataScope>
+            </settings>
+        </field>
+
+        <field name="age" formElement="input">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">data</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                    <rule name="validate-number" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Age</label>
+                <dataScope>age</dataScope>
+            </settings>
+        </field>
+
+        <field name="location" formElement="select">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">data</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Location</label>
+                <dataScope>location</dataScope>
+            </settings>
+            <formElements>
+                <select>
+                    <settings>
+                        <options>
+                            <option name="HCM" xsi:type="array">
+                                <item name="value" xsi:type="string">HCM</item>
+                                <item name="label" xsi:type="string">Ho Chi Minh</item>
+                            </option>
+                            <option name="HN" xsi:type="array">
+                                <item name="value" xsi:type="string">HN</item>
+                                <item name="label" xsi:type="string">Ha Noi</item>
+                            </option>
+                            <option name="DN" xsi:type="array">
+                                <item name="value" xsi:type="string">DN</item>
+                                <item name="label" xsi:type="string">Da Nang</item>
+                            </option>
+                        </options>
+                        <caption translate="true">-- Please Select --</caption>
+                    </settings>
+                </select>
+            </formElements>
+        </field>
+
+    </fieldset>
+</form>

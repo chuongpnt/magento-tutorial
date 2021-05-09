@@ -1,0 +1,15 @@
+<?php /** @var \Isobar\Grid\Block\StaffList $block */ ?>
+<span class="custom">This is custom front view.</span>
+<br/>
+<?php
+//echo $block->getText();
+?>
+<br/>
+<?php
+echo $block->getData('view_model')->testViewModel();
+//get all child
+//echo $block->getChildHtml()
+?>
+<div data-mage-init='{"hello": {"message": "HELLO WORLD!"}}'>
+    Content
+</div>

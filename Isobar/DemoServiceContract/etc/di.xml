@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="isobar_demoservicecontract_list_command" xsi:type="object">
+                    Isobar\DemoServiceContract\Console\Command\ListCommand
+                </item>
+                <item name="isobar_demoservicecontract_update_command" xsi:type="object">
+                    Isobar\DemoServiceContract\Console\Command\UpdateCommand
+                </item>
+                <item name="isobar_demoservicecontract_delete_command" xsi:type="object">
+                    Isobar\DemoServiceContract\Console\Command\DeleteCommand
+                </item>
+                <item name="isobar_demoservicecontract_create_command" xsi:type="object">
+                    Isobar\DemoServiceContract\Console\Command\CreateCommand
+                </item>
+                <item name="isobar_demoservicecontract_list_all_command" xsi:type="object">
+                    Isobar\DemoServiceContract\Console\Command\ListAllCommand
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <preference for="Isobar\DemoServiceContract\Api\HamburgerRepositoryInterface"
+                type="Isobar\DemoServiceContract\Model\HamburgerRepository"/>
+    <preference for="Isobar\DemoServiceContract\Api\Data\HamburgerInterface"
+                type="Isobar\DemoServiceContract\Model\Hamburger"/>
+    <preference for="Isobar\DemoServiceContract\Api\Data\HamburgerSearchResultInterface"
+                type="Isobar\DemoServiceContract\Model\HamburgerSearchResult"/>
+    <preference for="Isobar\DemoServiceContract\Api\HamburgerManagementInterface"
+                type="Isobar\DemoServiceContract\Model\HamburgerManagement"/>
+
+
+</config>

@@ -1,0 +1,13 @@
+{
+    "isobar_demo": {
+        "column": {
+            "id": true,
+            "staff": true,
+            "age": true,
+            "location": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

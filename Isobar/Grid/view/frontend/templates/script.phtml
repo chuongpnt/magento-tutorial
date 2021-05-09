@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @var Magento\Framework\View\Element\Template $block
+ * @var Magento\Framework\Escaper $escaper
+ */
+?>
+
+<div data-bind="scope: 'sample-component'">
+    <h2 data-bind="text: title"></h2>
+    <!-- ko if: isVisible -->
+    <div class="someClass" >
+        <span data-bind="text: title1"></span>
+    </div>
+    <!-- /ko -->
+    <span data-bind="text: getStaffData()"></span>
+</div>
+
+
+
+<script type="text/x-magento-init">
+   {
+       "*": {
+           "Magento_Ui/js/core/app": {
+               "components": {
+                   "sample-component": {
+                       "component": "Isobar_Grid/js/component",
+                       "title": "Sample Component",
+                       "isVisible": true,
+                       "title1": "Visible Component",
+                       "testViewModel": "<?php echo $block->getData('view_model')->testViewModel(); ?>"
+                   }
+               }
+           }
+       }
+   }
+</script>
